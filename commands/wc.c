@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
         if (arg[0] != '-') {
             FILE *file = fopen(arg, "r");
             if (file == NULL) {
-                printf("Error opening file %s\n", argv[1]);
+                printf("%s: %s: No such file or directory\n", argv[0], arg);
                 return 1;
             }
 
