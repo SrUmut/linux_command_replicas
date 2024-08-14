@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
                 putchar(c);
                 prevChar = c;
             }
+            fclose(file);
         }
     }
 

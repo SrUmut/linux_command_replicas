@@ -83,6 +83,7 @@ int main(int argc, char *argv[]) {
                 if (printCCount) { printf("\t%d", charCount); }
                 printf("\t%s\n", arg);
             }
+            fclose(file);
         }
     }
 
