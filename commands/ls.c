@@ -7,8 +7,6 @@
 
 char *join(char *base, char *ent);
 
-typedef struct dirent* dirent;
-
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("Usage: %s <directory>\n", argv[0]);
@@ -48,8 +46,8 @@ int main(int argc, char *argv[]) {
     }
 
     DIR *dirp = opendir(dirPath);
-
-    for (dirent ent = readdir(dirp); ent != NULL; ent = readdir(dirp)) {
+    struct dirent *ent;
+    for (ent = readdir(dirp); ent != NULL; ent = readdir(dirp)) {
         if (!all && ent->d_name[0] == '.')
             continue;
 
